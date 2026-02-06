@@ -13,73 +13,92 @@ export default function Home() {
             src="/images/hero.png"
             alt="Bespoke Suit Fabric"
             fill
-            className="object-cover brightness-50"
+            className="object-cover"
             priority
           />
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/60" />
         </div>
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-neutral">
-          <h1 className="mb-6 max-w-4xl text-5xl font-bold font-serif leading-tight tracking-tight sm:text-7xl animate-in fade-in zoom-in duration-1000">
-            Precision in Every Stitch. <br />
-            <span className="text-accent italic">Elegance</span> in Every Detail.
+        
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-neutral pt-20">
+          <h1 className="mb-8 max-w-5xl text-5xl font-semibold font-serif leading-[1.1] tracking-tight sm:text-7xl lg:text-8xl animate-in fade-in zoom-in duration-1000">
+            Precision in Every <span className="italic font-light">Stitch</span>. <br />
+            Elegance in Every <span className="text-accent italic font-light">Detail</span>.
           </h1>
-          <p className="mb-10 max-w-2xl text-lg font-light tracking-wide text-neutral/80 sm:text-xl animate-in slide-in-from-bottom-5 duration-1000 delay-300">
+          <p className="mb-12 max-w-2xl text-lg font-light tracking-wide text-neutral/90 sm:text-xl animate-in slide-in-from-bottom-5 duration-1000 delay-300 leading-relaxed">
             Experience the art of bespoke tailoring. Crafted exclusively for you, 
-            defining your style with timeless sophistication.
+            defining your style with timeless sophistication and modern flair.
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row animate-in slide-in-from-bottom-5 duration-1000 delay-500">
-            <Button href="/contact" size="lg">
-              Book a Consultation
+          <div className="flex flex-col gap-6 sm:flex-row animate-in slide-in-from-bottom-5 duration-1000 delay-500">
+            <Button href="/contact" size="lg" className="min-w-[200px]">
+              Book Consultation
             </Button>
-            <Button href="/services" variant="outline" size="lg" className="border-neutral text-neutral hover:bg-neutral hover:text-secondary">
-              Explore Services
+            <Button href="/services" variant="outline" size="lg" className="min-w-[200px] border-neutral text-neutral hover:bg-neutral hover:text-secondary">
+              Explore Collections
             </Button>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce duration-2000 text-neutral/60">
+          <div className="h-10 w-[1px] bg-neutral/60 mx-auto mb-2" />
+          <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
         </div>
       </section>
 
       {/* Intro / Value Prop */}
-      <section className="py-20 px-6 bg-neutral">
-        <div className="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+      <section className="py-24 px-6 bg-neutral">
+        <div className="container mx-auto grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="mb-6 text-4xl font-bold font-serif text-secondary">
-              Where Tradition Meets <span className="text-primary">Modern Style</span>
+            <h2 className="mb-8 text-4xl font-bold font-serif text-secondary lg:text-5xl">
+              Where Tradition Meets <span className="text-primary italic">Modern Style</span>
             </h2>
-            <p className="mb-6 text-lg text-muted leading-relaxed">
-              At Masterline Tailor, we believe that a suit is more than just clothing—it's a statement. 
+            <p className="mb-8 text-lg text-muted leading-relaxed font-light">
+              At Masterline Tailor, we believe that a suit is more than just clothing—it's a statement of character. 
               Our master tailors combine generations of craftsmanship with contemporary aesthetics 
               to create garments that fit your body and your lifestyle perfectly.
             </p>
-            <ul className="mb-8 space-y-4">
-              {['Hand-stitched details', 'Premium Italian fabrics', 'Perfect fit guarantee', 'Personalized styling'].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-secondary font-medium">
-                  <div className="h-2 w-2 rounded-full bg-accent" />
+            <ul className="mb-10 space-y-5">
+              {['Hand-stitched details & Italian Fabrics', 'Perfect fit guarantee with 3 fittings', 'Personalized styling consultation', 'Lifecycle garment care'].map((item) => (
+                <li key={item} className="flex items-center gap-4 text-secondary font-medium group">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-neutral transition-colors">
+                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
                   {item}
                 </li>
               ))}
             </ul>
-            <Button href="/about" variant="secondary">
+            <Button href="/about" variant="secondary" className="px-10">
               Read Our Story
             </Button>
           </div>
-          <div className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
+          <div className="relative h-[600px] w-full rounded-[2px] overflow-hidden shadow-2xl border-8 border-white/50">
              <Image
               src="/images/about.png"
               alt="Master Tailor at Work"
               fill
-              className="object-cover hover:scale-105 transition-transform duration-700"
+              className="object-cover hover:scale-105 transition-transform duration-1000 ease-out"
             />
           </div>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 px-6 bg-secondary text-neutral">
-        <div className="container mx-auto">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold font-serif text-neutral">Our Expertise</h2>
-            <div className="mx-auto h-1 w-24 bg-accent" />
+      <section className="py-24 px-6 bg-secondary text-neutral relative overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        
+        <div className="container mx-auto relative z-10">
+          <div className="mb-20 text-center">
+            <span className="text-accent uppercase tracking-widest text-sm font-bold mb-3 block">Our Craft</span>
+            <h2 className="mb-6 text-4xl font-bold font-serif text-neutral lg:text-5xl">Bespoke Services</h2>
+            <div className="mx-auto h-[2px] w-24 bg-accent" />
+            <p className="mt-6 text-neutral/60 max-w-2xl mx-auto font-light leading-relaxed">
+              From the initial consultation to the final fitting, our services are designed to provide 
+              an unparalleled clothing experience tailored to your unique requirements.
+            </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             <ServiceCard 
               title="Bespoke Suits" 
               description="Fully canvassed, hand-cut, and tailored to your exact measurements for an impeccable fit and silhouette."
@@ -99,8 +118,8 @@ export default function Home() {
               href="/services"
             />
           </div>
-          <div className="mt-12 text-center">
-            <Button href="/services" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-secondary">
+          <div className="mt-16 text-center">
+            <Button href="/services" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-secondary min-w-[200px]">
               View All Services
             </Button>
           </div>
@@ -108,14 +127,17 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-primary text-neutral text-center">
-        <h2 className="mb-6 text-4xl font-bold font-serif">Ready to Elevate Your Style?</h2>
-        <p className="mb-10 text-xl text-neutral/90 max-w-2xl mx-auto">
-          Book your private consultation today and start the journey to your perfect garment.
-        </p>
-        <Button href="/contact" size="lg" className="bg-neutral text-primary hover:bg-neutral/90 border-transparent shadow-xl">
-          Schedule Appointment
-        </Button>
+      <section className="py-28 px-6 bg-primary text-neutral text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10" />
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h2 className="mb-8 text-4xl font-bold font-serif lg:text-5xl leading-tight">Ready to Elevate Your Style?</h2>
+          <p className="mb-12 text-xl text-neutral/90 max-w-2xl mx-auto font-light leading-relaxed">
+            Book your private consultation today and start the journey to your perfect garment.
+          </p>
+          <Button href="/contact" size="lg" className="bg-neutral text-primary hover:bg-neutral/90 border-transparent shadow-2xl min-w-[240px]">
+            Schedule Appointment
+          </Button>
+        </div>
       </section>
     </div>
   );

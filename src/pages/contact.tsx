@@ -78,27 +78,27 @@ export default function Contact() {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-secondary mb-2">Name</label>
+                  <label htmlFor="name" className="block text-sm font-bold uppercase tracking-wide text-secondary mb-2">Name</label>
                   <input 
                     type="text" 
                     id="name" 
-                    className="w-full px-4 py-3 bg-background border border-muted/20 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                    className="w-full px-4 py-4 bg-background border border-muted/20 rounded-[2px] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-300 placeholder:font-light"
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-secondary mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-bold uppercase tracking-wide text-secondary mb-2">Email</label>
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full px-4 py-3 bg-background border border-muted/20 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                    className="w-full px-4 py-4 bg-background border border-muted/20 rounded-[2px] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-300 placeholder:font-light"
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-secondary mb-2">Subject</label>
-                 <select id="subject" className="w-full px-4 py-3 bg-background border border-muted/20 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-secondary">
+                <label htmlFor="subject" className="block text-sm font-bold uppercase tracking-wide text-secondary mb-2">Subject</label>
+                 <select id="subject" className="w-full px-4 py-4 bg-background border border-muted/20 rounded-[2px] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-300 text-secondary cursor-pointer">
                    <option>General Inquiry</option>
                    <option>Book Appointment</option>
                    <option>Existing Order Status</option>
@@ -106,15 +106,15 @@ export default function Contact() {
                  </select>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-secondary mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-bold uppercase tracking-wide text-secondary mb-2">Message</label>
                 <textarea 
                   id="message" 
                   rows={5}
-                  className="w-full px-4 py-3 bg-background border border-muted/20 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                  className="w-full px-4 py-4 bg-background border border-muted/20 rounded-[2px] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-300 placeholder:font-light"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
-              <Button type="submit" size="lg" className="w-full">
+              <Button type="submit" size="lg" className="w-full mt-2">
                 Send Message
               </Button>
             </form>

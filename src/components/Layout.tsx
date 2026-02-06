@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,6 +10,9 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, pageTitle = 'Masterline Tailor' }: LayoutProps) {
+  const router = useRouter();
+  const isHome = router.pathname === '/';
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground font-sans">
       <Head>
@@ -16,7 +20,7 @@ export default function Layout({ children, pageTitle = 'Masterline Tailor' }: La
         <meta name="description" content="Premium bespoke tailoring for the modern gentleman." />
       </Head>
       <Header />
-      <main className="flex-grow pt-20">
+      <main className={`flex-grow ${isHome ? '' : 'pt-24'}`}>
         {children}
       </main>
       <Footer />

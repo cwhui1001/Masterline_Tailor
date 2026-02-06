@@ -15,12 +15,12 @@ export default function About() {
       {/* Content */}
       <section className="py-20 px-6 bg-background">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 relative h-[600px] w-full">
+          <div className="order-2 md:order-1 relative h-[600px] w-full border-8 border-white/50 rounded-[2px] shadow-2xl overflow-hidden">
             <Image
               src="/images/about.png"
               alt="Tailor Working"
               fill
-              className="object-cover rounded-sm shadow-xl"
+              className="object-cover hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute -bottom-6 -right-6 h-48 w-48 bg-accent/10 rounded-full blur-3xl -z-10" />
             <div className="absolute -top-6 -left-6 h-48 w-48 bg-primary/10 rounded-full blur-3xl -z-10" />
