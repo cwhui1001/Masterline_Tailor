@@ -134,7 +134,7 @@ export default function Home() {
           <p className="mb-12 text-xl text-neutral/90 max-w-2xl mx-auto font-light leading-relaxed">
             Book your private consultation today and start the journey to your perfect garment.
           </p>
-          <Button href="/contact" size="lg" className="bg-neutral text-primary hover:bg-neutral/90 border-transparent shadow-2xl min-w-[240px]">
+          <Button href="/contact" size="lg" className="bg-white text-primary hover:bg-white/80 border-transparent shadow-2xl min-w-[240px]">
             Schedule Appointment
           </Button>
         </div>
